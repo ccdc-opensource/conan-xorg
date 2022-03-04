@@ -1,0 +1,19 @@
+resources:
+  repositories:
+    - repository: templates
+      type: github
+      name: ccdc-opensource/conan-azure-devops
+      ref: refs/heads/development
+      endpoint: github
+
+extends:
+  template: third-party-library-all-platforms-from-local-recipe-split.yml@templates
+  parameters:
+    package: xorg
+    package_version: system
+    destination_repository: ccdc-3rdparty-conan
+    build_types:
+      - Release
+    platforms:
+      - centos7_gcc10
+      - ubuntu2004_gcc10
